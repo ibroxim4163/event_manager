@@ -12,4 +12,6 @@ abstract class AppColors {
   static const whiteColor = Colors.white;
   static const greyColor = Colors.grey;
   static const deleteButtonColor = Color(0xFFFEE8E9);
+  static const weekdayColor = Color(0xFF969696);
+  static const monthColor = Color(0xFF292929);
 }

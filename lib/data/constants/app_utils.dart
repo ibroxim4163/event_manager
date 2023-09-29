@@ -7,6 +7,7 @@ abstract class AppUtils {
   static const pTop12 = EdgeInsets.only(top: 12);
   static const pTop8Sym8 = EdgeInsets.only(top: 8, left: 8, right: 8);
   static const pSym15 = EdgeInsets.symmetric(horizontal: 15);
+  static const pLeft2 = EdgeInsets.only(left: 2);
 
   // padding all
   static const pAll8 = EdgeInsets.all(8);

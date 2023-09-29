@@ -33,7 +33,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
       builder: (context, state) {
         return Center(
           child: SizedBox(
-            height: 250,
+            height: 295,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -73,6 +73,26 @@ String getMonthName(int index) {
     12 => "December",
     _ => "January",
   };
+}
+
+extension MonthName on int{
+  String getMonth(int index){
+     return switch (index) {
+    1 => "January",
+    2 => "February",
+    3 => "March",
+    4 => "April",
+    5 => "May",
+    6 => "June",
+    7 => "July",
+    8 => "August",
+    9 => "September",
+    10 => "October",
+    11 => "November",
+    12 => "December",
+    _ => "January",
+  };
+  }
 }
 
 extension DateTimeExt on DateTime {

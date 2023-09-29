@@ -1,4 +1,5 @@
 import 'package:event_task/data/models/todo_model.dart';
+import 'package:flutter/material.dart';
 
 import '../local_structure/todo_local_structure.dart';
 
@@ -10,11 +11,11 @@ class TodoRepository {
     try {
       Map<String, Object?> data = todo.toJson();
       data.remove("id");
-     
+
       await localDataStructure.insert(data: data);
       return true;
     } catch (e, s) {
-      print("$e$s");
+      debugPrint("$e,$s");
 
       return false;
     }
@@ -33,8 +34,8 @@ class TodoRepository {
     try {
       final response = await localDataStructure.readAll();
       return response.map((e) => TodoModel.fromJson(e)).toList();
-    } catch (e,s) {
-      print("$e$s");
+    } catch (e, s) {
+      debugPrint("$e,$s");
       return [];
     }
   }

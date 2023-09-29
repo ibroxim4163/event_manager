@@ -1,7 +1,9 @@
-import 'package:event_task/presentation/main_page/widgets/calendar/custom_calendar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/constants/app_colors.dart';
+import '../../../../data/constants/app_utils.dart';
+import '../../../../data/constants/text_styles.dart';
+import 'custom_calendar.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -19,18 +21,14 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: AppUtils.pAll8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             getMonthName(selectedMonth.month),
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Color(0xFF292929),
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-            ),
+            style: AppTextStyles.calendatMonth,
           ),
           Row(
             children: [

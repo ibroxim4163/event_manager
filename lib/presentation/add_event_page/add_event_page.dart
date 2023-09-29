@@ -1,12 +1,13 @@
-import 'package:event_task/logic/event_bloc/event_bloc.dart';
-import 'package:event_task/presentation/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/constants/app_colors.dart';
 import '../../data/constants/app_navigator.dart';
 import '../../data/constants/app_utils.dart';
+import '../../data/constants/text_styles.dart';
 import '../../data/models/todo_model.dart';
+import '../../logic/event_bloc/event_bloc.dart';
+import '../main_page/main_page.dart';
 import 'widgets/custom_app_bar.dart';
 import 'widgets/custom_drop_down.dart';
 import 'widgets/custom_text_field.dart';
@@ -66,7 +67,8 @@ class _AddEventPageState extends State<AddEventPage> {
   }
 
   String? validateTime(String? value) {
-    final regex = RegExp(r"([0-9]{2}):([0-9]{2})-([0-9]{2}):([0-9]{2})");
+    final regex=RegExp(r'^([01]\d|2[0-3]):([0-5]\d)-([01]\d|2[0-3]):([0-5]\d)$');
+    // final regex = RegExp(r"([0-9]{2}):([0-9]{2})-([0-9]{2}):([0-9]{2})");
     if (!(value != null && regex.hasMatch(value))) {
       return "It is not correct time";
     }
@@ -169,9 +171,9 @@ class _AddEventPageState extends State<AddEventPage> {
                       fixedSize: const Size(double.infinity, 50),
                     ),
                     onPressed: addEvent,
-                    child: const Text(
-                      "Add",
-                      style: TextStyle(
+                    child: Text(
+                      widget.todo == null ? "Add" : "Update",
+                      style: const TextStyle(
                         color: AppColors.whiteColor,
                       ),
                     ),
@@ -196,10 +198,7 @@ class _Texts extends StatelessWidget {
       padding: AppUtils.pTop12Left10,
       child: Text(
         text,
-        style: const TextStyle(
-          fontSize: 14,
-          color: AppColors.blackColor,
-        ),
+        style: AppTextStyles.texts,
       ),
     );
   }

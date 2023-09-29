@@ -107,13 +107,8 @@ class MainPage extends StatelessWidget {
                             final todo = state.eventTodo.todos[index];
                             return GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        DetailsPage(todo: todo),
-                                  ),
-                                );
+                                AppNavigator.navigatorPush(
+                                    context, DetailsPage(todo: todo));
                               },
                               child: TodoHolder(todo: todo),
                             );

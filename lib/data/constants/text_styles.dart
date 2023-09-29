@@ -11,6 +11,12 @@ abstract class AppTextStyles {
         fontFamily: "Poppins",
       );
 
+  static const calendatMonth = TextStyle(
+    color: AppColors.monthColor,
+    fontWeight: FontWeight.w700,
+    fontSize: 14,
+  );
+
   static TextStyle get date => const TextStyle(
         fontSize: 20,
         color: AppColors.blackColor,
@@ -73,6 +79,20 @@ abstract class AppTextStyles {
     fontSize: 16,
     color: AppColors.greyColor,
     fontWeight: FontWeight.w500,
+    fontFamily: "Poppins",
+  );
+
+  static const edit = TextStyle(
+    color: Colors.white,
+    fontSize: 20,
+    fontFamily: "Poppins",
+    fontWeight: FontWeight.w500,
+  );
+
+  // add event page
+  static const texts = TextStyle(
+    fontSize: 14,
+    color: AppColors.blackColor,
     fontFamily: "Poppins",
   );
 }

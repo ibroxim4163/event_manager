@@ -1,4 +1,3 @@
-import 'package:event_task/presentation/add_event_page/add_event_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/constants/app_colors.dart';
@@ -7,6 +6,7 @@ import '../../../data/constants/app_navigator.dart';
 import '../../../data/constants/app_utils.dart';
 import '../../../data/constants/text_styles.dart';
 import '../../../data/models/todo_model.dart';
+import '../../add_event_page/add_event_page.dart';
 
 class DetailsHeader extends StatelessWidget {
   final TodoModel todo;
@@ -52,28 +52,19 @@ class DetailsHeader extends StatelessWidget {
                     onTap: () {
                       AppNavigator.navigatorPush(
                         context,
-                        AddEventPage(
-                          todo: todo,
-                        ),
+                        AddEventPage(todo: todo),
                       );
                     },
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Image(
-                          image: AssetImage(
-                            AppIcons.edit,
-                          ),
+                          image: AssetImage(AppIcons.edit),
                           height: 25,
                         ),
                         Text(
                           "Edit",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontFamily: "Poppins",
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: AppTextStyles.edit,
                         ),
                       ],
                     ),

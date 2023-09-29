@@ -15,18 +15,19 @@ class TodoHolder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
+    final MaterialColor selectedColor = AppColors.primaries[todo.priorityColor];
     return Padding(
       padding: AppUtils.pAll8,
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: AppUtils.bAll8,
-          color: AppColors.primaries[todo.priorityColor].shade600,
+          color: selectedColor.shade600,
         ),
         child: Padding(
           padding: AppUtils.pTop12,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: AppColors.primaries[todo.priorityColor].shade100,
+              color: selectedColor.shade100,
               borderRadius: AppUtils.bBottom8,
             ),
             child: Padding(
@@ -47,7 +48,7 @@ class TodoHolder extends StatelessWidget {
                     overflow: TextOverflow.clip,
                     maxLines: 2,
                     style: TextStyle(
-                      color: AppColors.primaries[todo.priorityColor].shade700,
+                      color: selectedColor.shade700,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -56,21 +57,20 @@ class TodoHolder extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.watch_later,
-                        color: AppColors.primaries[todo.priorityColor].shade700,
+                        color: selectedColor.shade700,
                       ),
                       const SizedBox(width: 4),
                       Text(
                         todo.time,
                         style: TextStyle(
-                          color:
-                              AppColors.primaries[todo.priorityColor].shade700,
+                          color: selectedColor.shade700,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(width: 7),
                       Icon(
                         Icons.location_on,
-                        color: AppColors.primaries[todo.priorityColor].shade700,
+                        color: selectedColor.shade700,
                       ),
                       SizedBox(
                         width: screenSize.width * .45,
@@ -79,8 +79,7 @@ class TodoHolder extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                           style: TextStyle(
-                            color: AppColors
-                                .primaries[todo.priorityColor].shade700,
+                            color: selectedColor.shade700,
                             fontWeight: FontWeight.w600,
                           ),
                         ),

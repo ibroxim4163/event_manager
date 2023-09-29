@@ -36,8 +36,6 @@ class LocalDataStructure {
       data,
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
-
-    print(await readAll());
   }
 
   Future<void> update({
